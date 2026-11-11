@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pooja Sree Panameti · AI/ML</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root{--bg:#eef2f6;--surface:#fff;--ink:#14213d;--muted:#55627a;--line:#cfd8e3;--accent:#0f7f86;--point:#d98a1f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0f1826;--surface:#17233a;--ink:#e8eef8;--muted:#9fb0c8;--line:#2a3a56;--accent:#4fc3c9;--point:#f0b252}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0f1826;--surface:#17233a;--ink:#e8eef8;--muted:#9fb0c8;--line:#2a3a56;--accent:#4fc3c9;--point:#f0b252}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--point);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem}
+nav{display:flex;gap:1.5rem;justify-content:flex-end;padding:1.25rem 0}
+nav a{color:var(--muted);text-decoration:none;font-weight:500}
+nav a:hover{color:var(--ink)}
+.hero{padding:2.5rem 0 4.5rem}
+.hero h1{font-size:clamp(2.6rem,6.5vw,4.8rem);font-weight:800;letter-spacing:-.03em}
+.hero p{color:var(--muted);max-width:34rem;margin:1.25rem 0 1.75rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.25rem;border-radius:8px;font-weight:500;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink);background:none;font-family:inherit;font-size:1rem;cursor:pointer}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.plot{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1rem 1rem .75rem}
+.plot canvas{width:100%;height:230px;display:block}
+.plot .bar{display:flex;justify-content:space-between;align-items:center;font-size:.9rem;color:var(--muted);margin-top:.5rem}
+.plot button{padding:.35rem .8rem;font-size:.9rem}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:2rem;margin-bottom:1.5rem}
+.about{max-width:42rem}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.5rem}
+.card h3{font-size:1.3rem;margin-bottom:.5rem}
+.card p{color:var(--muted);margin:.25rem 0 1rem;font-size:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:0;list-style:none}
+.tags li{font-size:.85rem;padding:.15rem .6rem;border-radius:99px;background:var(--bg);border:1px solid var(--line)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.skills h3{font-size:1.05rem;margin-bottom:.6rem}
+footer{padding:3rem 0 4rem;border-top:1px solid var(--line);color:var(--muted)}
+.card.featured{grid-column:1/-1;padding:1.75rem}
+.card.featured h3{font-size:1.6rem}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.25rem 0}
+.feat h4{font:700 1rem "Bricolage Grotesque",system-ui,sans-serif;margin:0 0 .4rem}
+.list{margin:0;padding-left:1.1rem;color:var(--muted);font-size:1rem}
+.list li{margin-bottom:.3rem}
+details{margin:0 0 1.1rem;border-top:1px solid var(--line);padding-top:.9rem}
+summary{cursor:pointer;font-weight:500}
+details .list{margin-top:.6rem}
+.card.featured{display:flex;flex-direction:column}
+.card.featured>.tags{order:1;margin:.25rem 0 1.25rem}
+.card.featured>p:last-child{order:2}
+.card.featured>.more{order:3;margin:1.5rem 0 0}
+.more>summary{color:var(--accent)}
+.more .feat{margin-top:1rem}
+@media (max-width:760px){.hero{grid-template-columns:1fr;padding-bottom:3rem}.feat{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main"><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+<header class="hero">
+<div>
+<h1>Pooja Sree Panameti</h1>
+<p>Computer science graduate building machine learning projects. I like turning messy data into models that work and explaining how they got there.</p>
+<div class="btns"><a class="btn primary" href="#projects">See my projects</a><a class="btn" href="#contact">Get in touch</a></div>
+</div>
+</header>
+</div>
+
+<section id="about"><div class="wrap about">
+<h2>About</h2>
+<p>I recently graduated with a degree in Computer Science Engineering, with a focus on artificial intelligence and machine learning. I enjoy the full loop of a project: framing the problem, preparing data, training and evaluating models, and shipping something people can use.</p>
+<p>I’m looking for roles and internships where I can keep learning while contributing to real ML work.</p>
+</div></section>
+
+<section id="projects"><div class="wrap">
+<h2>Projects</h2>
+<div class="projects">
+<article class="card featured"><h3>AI Speech Analysis Application</h3><p>A Streamlit app that turns spoken audio into transcripts, speech insights and personalized feedback using OpenAI Whisper, with a technical interview practice mode.</p>
+<details class="more"><summary>Full project details</summary>
+<p>Record or upload your speech and get instant feedback on filler words, speaking pace, pronunciation clarity and grammar. Track your improvement over time, or practice technical interview questions by answering out loud and getting corrected.</p>
+<div class="feat">
+<div><h4>Key features</h4><ul class="list"><li>Record with the microphone or upload wav, mp3 or m4a audio</li><li>Word-level timestamps from Whisper</li><li>Filler words, speech rate (WPM), pronunciation score and grammar checking</li><li>Secure registration and login with salted password hashing</li><li>Progress charts across sessions</li><li>Interview practice: answer by voice and get a verdict, the correct answer and delivery feedback</li><li>Question bank you can expand with a CSV file</li></ul></div>
+<div><h4>How it works</h4><p style="margin:0 0 1rem">Audio goes to Whisper, which returns text with word timestamps and confidences. The pipeline calculates filler counts, speech rate, a pronunciation score and grammar issues, and rule-based feedback turns those into advice. Results are saved in SQLite for progress tracking.</p><h4>What I built</h4><ul class="list"><li>A modular architecture with one file per responsibility: transcription, analysis, feedback, authentication, database and visualization</li><li>The analysis pipeline and the rule-based grammar checker</li><li>Authentication and session storage</li><li>The Streamlit interface and the interview practice workflow</li></ul></div>
+</div>
+<details><summary>Challenges and solutions</summary><ul class="list"><li>Whisper removes filler words, so I used prompt conditioning to make it keep them.</li><li>To check grammar without Java, I built a lightweight rule-based checker instead of depending on LanguageTool.</li><li>For pronunciation, I used Whisper’s word confidence as a clarity signal and was clear about its limits.</li></ul></details>
+</details>
+<ul class="tags"><li>Python</li><li>Streamlit</li><li>OpenAI Whisper</li><li>PyTorch</li><li>ffmpeg</li><li>pandas</li><li>SQLite</li><li>regex</li></ul>
+<p style="margin:1.25rem 0 0"><a class="btn" href="https://github.com/Poojasreepanameti/SpeakEase-AI" target="_blank" rel="noopener">View code on GitHub</a></p></article>
+<article class="card featured"><h3>Chronic Disease Prediction System</h3><p>A machine learning app that estimates a person’s risk for 10 chronic diseases from 11 health and lifestyle inputs.</p>
+<details class="more"><summary>Full project details</summary>
+<p>I built an end-to-end application on the CDC BRFSS 2022 health survey, which has about 445,000 respondents. Users enter details such as age, BMI, smoking status and general health in a Streamlit interface, and the app returns a risk percentage for each disease.</p>
+<div class="feat">
+<div><h4>What I did</h4><ul class="list"><li>Cleaned and prepared real-world survey data with pandas and NumPy</li><li>Encoded text columns with LabelEncoder and scaled features with StandardScaler</li><li>Handled strong class imbalance with SMOTE, applied to training data only to avoid data leakage</li><li>Trained one logistic regression model per disease with scikit-learn</li><li>Built a PyTorch neural network version and compared it against the baseline</li><li>Built the Streamlit interface for input, prediction and results</li></ul></div>
+<div><h4>Diseases covered</h4><ul class="tags" style="margin-bottom:1rem"><li>Heart attack</li><li>Angina</li><li>Stroke</li><li>Asthma</li><li>Skin cancer</li><li>COPD</li><li>Depression</li><li>Kidney disease</li><li>Arthritis</li><li>Diabetes</li></ul><h4>Data</h4><p style="margin:0">CDC BRFSS 2022 survey, about 445,000 respondents, with 11 inputs per person.</p></div>
+</div>
+</details>
+<ul class="tags"><li>Python</li><li>pandas</li><li>NumPy</li><li>scikit-learn</li><li>imbalanced-learn</li><li>PyTorch</li><li>Streamlit</li></ul>
+<p style="margin:1.25rem 0 0"><a class="btn" href="https://github.com/Poojasreepanameti/Chronic-Disease-Risk-Prediction" target="_blank" rel="noopener">View code on GitHub</a></p></article>
+<article class="card featured"><h3>Intelligent Document Q&amp;A Chatbot using RAG</h3><p>Upload PDFs or text files and ask questions in plain English. The chatbot answers from your documents.</p>
+<details class="more"><summary>Full project details</summary>
+<p>A Retrieval-Augmented Generation (RAG) app that finds the most relevant parts of your documents with semantic search and gives them to an open-source LLM, so answers are based on the document content. It runs fully locally with no API key.</p>
+<div class="feat">
+<div><h4>Key features</h4><ul class="list"><li>Upload multiple PDF and TXT documents</li><li>Text extraction, chunking and embedding generation</li><li>Semantic similarity search with a FAISS vector store</li><li>Grounded answers from the retrieved context</li><li>Chat-style Streamlit interface with conversation history</li><li>A “context used” panel so answers can be checked</li><li>Open-source models, no API key</li></ul></div>
+<div><h4>How it works</h4><p style="margin:0 0 .75rem">Text is split into chunks and embedded with a Hugging Face sentence-transformer model, then stored in a FAISS index. For each question, the app retrieves the three most similar chunks and passes them to Qwen2.5-0.5B-Instruct, which is instructed to answer only from that context.</p><pre style="margin:0;padding:.75rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);font-size:.85rem;line-height:1.5;overflow-x:auto">Upload → extract text → chunk → embed → FAISS
+Question → embed → top 3 chunks → prompt → LLM → answer</pre></div>
+</div>
+<details><summary>What I learned and challenges</summary><ul class="list"><li>Built a complete RAG pipeline and learned how chunk size, overlap and the number of chunks retrieved affect answer quality.</li><li>A newer transformers release removed the text2text-generation task, so I switched from flan-t5-base to a decoder-only instruct model (Qwen) using the text-generation task.</li><li>Used Streamlit session state and caching so models load once and the index persists across reruns.</li></ul></details>
+<details><summary>Limitations and future work</summary><ul class="list"><li>Scanned PDFs are not supported because there is no OCR.</li><li>Each question is answered independently, so follow-up questions are not supported yet.</li><li>The index is kept in memory and not saved to disk.</li><li>Planned: a larger LLM, source page citations, saving the index and using chat history.</li></ul></details>
+</details>
+<ul class="tags"><li>Python</li><li>LangChain</li><li>FAISS</li><li>Hugging Face Transformers</li><li>Sentence-Transformers</li><li>NLP</li><li>Streamlit</li></ul>
+<p style="margin:1.25rem 0 0"><a class="btn" href="https://github.com/Poojasreepanameti/Intelligent-Document-Q-A-ChatBot" target="_blank" rel="noopener">View code on GitHub</a></p></article>
+</div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Skills</h2>
+<div class="skills">
+<div><h3>Languages</h3><ul class="tags"><li>Python</li><li>SQL</li><li>Regex</li></ul></div>
+<div><h3>ML and data</h3><ul class="tags"><li>PyTorch</li><li>scikit-learn</li><li>imbalanced-learn</li><li>OpenAI Whisper</li><li>NLP</li><li>Hugging Face</li><li>LangChain</li><li>FAISS</li><li>pandas</li><li>NumPy</li></ul></div>
+<div><h3>Tools</h3><ul class="tags"><li>Streamlit</li><li>SQLite</li><li>ffmpeg</li></ul></div>
+</div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<h2>Contact</h2>
+<p>Email: <a href="mailto:poojasree.panameti@gmail.com">poojasree.panameti@gmail.com</a><br>
+<a href="https://github.com/Poojasreepanameti">GitHub</a> and <a href="https://www.linkedin.com/in/pooja-sree-panameti-530018280">LinkedIn</a></p>
+</div></section>
+<footer><div class="wrap">© 2026 Pooja Sree Panameti</div></footer>
+
+</body>
+</html>
